@@ -17,6 +17,9 @@ class QuanLy extends Component {
                         <button type="button" className="btn btn-primary ">
                             <span className="fa fa-plus-square" aria-hidden="true"> Thêm công việc </span>
                         </button>&nbsp;
+                        <button type="button" className="btn btn-danger ">
+                             Generate Data 
+                        </button>&nbsp;
                             {/*Trong Control bao gồm: Search -sort */}
                             <Control/>
                             {/*List - Trong TaskList bao gồm: TaskItemt*/}
