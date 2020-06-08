@@ -5,7 +5,7 @@ import Menu from './component/Menu';
 import routes from './route';
 class App extends Component {
     render() {
-        console.log('abc')
+       
         return (
             <Router>
                 <div className="App">
