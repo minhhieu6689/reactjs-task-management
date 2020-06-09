@@ -18,15 +18,11 @@ const menus = [
         exact: false,
     },
     {
-        name: 'Sản phẩm',
-        to: '/Products',
+        name: 'Người dùng',
+        to: '/Userspage',
         exact: false,
     },
-    {
-        name: 'Đăng Nhâp',
-        to: '/Login',
-        exact: false,
-    },
+    
     {
         name: 'Quản lý CV',
         to: '/QuanLy',
@@ -35,6 +31,11 @@ const menus = [
     {
         name: '',
         to: '/NotFound',
+        exact: false,
+    },
+    {
+        name: 'Đăng Nhâp',
+        to: '/Login',
         exact: false,
     }
 ]

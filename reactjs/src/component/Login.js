@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
+import Auth from './../Auth'
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -22,30 +22,41 @@ class Login extends Component {
 
     onLogin = (e) => {
         e.preventDefault();
+        var { history } = this.props
         var {txtUsername, txtPassword} = this.state;
 
         if (txtUsername === 'admin' && txtPassword === '123') {
-            localStorage.setItem('user', JSON.stringify({
-                username : txtUsername,
-                password : txtPassword
-            }));
+            localStorage.setItem('username', 'admin'
+            );
+            localStorage.setItem('password', '123')
+            Auth.login()
+            history.push("/")
+            return 
         }
+        else 
+        {
+            alert('Đăng nhập sai')
+            return history.push("/Login")}
     }
-
+    logout = () => {
+         
+            
+            localStorage.removeItem('username')
+            localStorage.removeItem('password')
+            Auth.logout();
+            return window.location.reload()
+    }
     render() {
-        var {txtUsername, txtPassword} = this.state;
-        var loggedInUser = localStorage.getItem('user');     
-
-        if (loggedInUser !== null) { // neu da login thi Redirect
-            var {location} = this.props;
-            return <Redirect to={{
-                pathname : '/Products',
-                state : {
-                    from : location
-                }
-            }} />
+        if(Auth.isAuthenticated() === true)
+        {
+            return (
+                <div>
+                   <button onClick={this.logout} className="my-link">Dang xuat</button>
+                </div>
+            )
         }
-
+       
+        else
         return (
             
             <div className="row">
@@ -60,7 +71,7 @@ class Login extends Component {
                                 type="text" 
                                 className="form-control" 
                                 name="txtUsername" 
-                                value={txtUsername}
+                                value={this.state.txtUsername}
                                 onChange={ this.onChange }
                             />
                         </div>
@@ -71,7 +82,7 @@ class Login extends Component {
                                 type="password" 
                                 className="form-control" 
                                 name="txtPassword" 
-                                value={txtPassword}
+                                value={this.state.txtPassword}
                                 onChange={ this.onChange }
                             />
                         </div>
