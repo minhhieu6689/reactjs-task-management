@@ -28,9 +28,10 @@ const menus = [
         to: '/QuanLy',
         exact: false,
     },
+    
     {
-        name: '',
-        to: '/NotFound',
+        name: 'Thời tiết',
+        to: '/Apiweather',
         exact: false,
     },
     {

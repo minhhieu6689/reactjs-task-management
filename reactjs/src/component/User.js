@@ -15,21 +15,17 @@ class User extends Component {
         var { user } = this.props
        
     }
-    onDelete = (username) => {
+    onDelete = (id) => {
         if (confirm('Bạn chắc chắn muốn xóa ???')) { //eslint-disable-line
 
-            this.props.onDelete(username)
+            this.props.onDelete(id)
         }
     }
-    detail = (username) => {
-        this.props.detail(username)
+    onDetail = (id) => {
+        this.props.onDetail(id)
     }
-    resetpass = (username) => {
-        this.props.resetpass(username)
-    }
-    onEdit = (x) => {
-        this.props.onEdit(x)
-    }
+    
+   
     render() {
         var { user, index } = this.props
        
@@ -53,7 +49,8 @@ class User extends Component {
                         type="button" className=" btn btn-success">Lịch sử nạp tiền</Link>
                     <button type="button" onClick={() => this.resetpass(user.username)} className="btn btn-secondary">Đặt lại mật khẩu</button>
                     <button type="button" onClick={() => this.detail(user.username)} className="btn btn-info">Chi tiết</button> */}
-                    <button type="button" onClick={() => this.onEdit(user.name)} className="btn btn-warning">Sửa</button>
+                     <Link type="button"  className="btn btn-warning" to={'/Userspage/add/'+user.id} > Sửa </Link>
+                    {/* <button type="button" onClick={() => this.onDetail(user.id)} className="btn btn-warning">Sửa</button> */}
                     <button type="button" onClick={() => this.onDelete(user.id)} className="btn btn-danger">Xóa</button>
 
 

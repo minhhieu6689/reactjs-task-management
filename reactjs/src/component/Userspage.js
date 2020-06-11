@@ -72,6 +72,7 @@ class Userspage extends Component {
             </div>
         );
     }
+   
     showUsers = (x) => {
 
         var rs = null;
@@ -84,6 +85,7 @@ class Userspage extends Component {
                         user={user}
                         index={index}
                         onDelete={this.onDelete}
+                       
                     />
                 )
             })
