@@ -22,7 +22,6 @@ class App extends Component {
         var result = null ;
         if (routes.length > 0)
         {
-            console.log(123)
             result = routes.map((route, index) => {
                 return (
                     <Route 
