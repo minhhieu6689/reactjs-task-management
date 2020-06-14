@@ -6,7 +6,7 @@ import Products from './component/Products';
 import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
-import EmployeeReducer from './component/EmployeeReducer/EmployeeForm'
+import EmployeeReducer from './component/EmployeeReducer/Employee'
 
 const routes = [
     {
