@@ -36,6 +36,11 @@ const menus = [
         name: '',
         to: '/NotFound',
         exact: false,
+    },
+    {
+        name: 'Quản lý nhân viên - redux',
+        to: '/Employee-Redux',
+        exact: false,
     }
 ]
 const MenuLink = ({

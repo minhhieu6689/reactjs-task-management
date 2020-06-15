@@ -6,6 +6,7 @@ import Products from './component/Products';
 import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
+import EmployeeReducer from './component/EmployeeReducer/Employee'
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         path: '/QuanLy',
         exact: false,
         main : () => <QuanLy/>
+    },
+    {
+        path: '/Employee-Redux',
+        exact: false,
+        main : () => <EmployeeReducer/>
     },
     {
         path: '',
