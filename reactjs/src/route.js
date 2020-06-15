@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Home from './component/Home';
 import About from './component/About';
 import Contact from './component/Contact';
-import Products from './component/Products';
+import Userspage from './component/Userspage';
+import UserActionpage from './component/UserActionpage';
+import APIWeather from './component/APIweather/Index'
 import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
@@ -26,20 +28,30 @@ const routes = [
         main: () => <Contact/>
     },
     {
-        path: '/Products',
+        path: '/Userspage/add/:id',
         exact: false,
-        main: ({match, location}) =><Products match={match} location={location} />
+        main: ({match, history}) =><UserActionpage match={match} history={history} />
     },
     {
-        path: '/Login',
+        path: '/Userspage/add',
         exact: false,
-        main : ({location}) => <Login location={location}/>
+        main: ({match, history}) =><UserActionpage match={match} history={history} />
     },
     {
-        path: '/QuanLy',
+        path: '/Userspage',
         exact: false,
-        main : () => <QuanLy/>
+        main: ({match, location}) =><Userspage match={match} location={location} />
     },
+    {
+        path: '/Apiweather',
+        exact: false,
+        main: ({match, location}) =><APIWeather match={match} location={location} />
+    },
+    // {
+    //     path: '/Login',
+    //     exact: false,
+    //     main : ({history,match}) => <Login match={match} history={history}/>
+    // },
     {
         path: '/QuanLyNV',
         exact: false,
@@ -51,11 +63,16 @@ const routes = [
         main : () => <EmployeeReducer/>
     },
     {
-        path: '',
+        path: '/QuanLy',
         exact: false,
-        main: () => <NotFound/>
+        main: () => <QuanLy/>
     }
     
+    // {
+    //     path: '',
+    //     exact: false,
+    //     main: () => <NotFound/>
+    // }
 ]
 
 export default routes;
