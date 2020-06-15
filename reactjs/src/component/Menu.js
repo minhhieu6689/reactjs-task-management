@@ -33,6 +33,11 @@ const menus = [
         exact: false,
     },
     {
+        name: 'Quản lý NV',
+        to: '/QuanLyNV',
+        exact: false,
+    },
+    {
         name: '',
         to: '/NotFound',
         exact: false,

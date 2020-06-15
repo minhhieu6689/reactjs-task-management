@@ -6,6 +6,7 @@ import Products from './component/Products';
 import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
+import QuanLyNV from './component/componentEmployee/QuanLyNV'
 
 const routes = [
     {
@@ -39,10 +40,16 @@ const routes = [
         main : () => <QuanLy/>
     },
     {
+        path: '/QuanLyNV',
+        exact: false,
+        main : () => <QuanLyNV/>
+    },
+    {
         path: '',
         exact: false,
         main: () => <NotFound/>
     }
+    
 ]
 
 export default routes;
