@@ -22,6 +22,7 @@ class TaskForm extends Component {
                                     <label >Trạng thái: </label>
                                     <select
                                         className="form-control"
+                                        value = {false}
                                         name="status">
                                         <option value={true}>Kích hoạt</option>
                                         <option value={false}>Ẩn</option>

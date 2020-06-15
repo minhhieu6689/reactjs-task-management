@@ -7,6 +7,7 @@ import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
 import QuanLyNV from './component/componentEmployee/QuanLyNV'
+import EmployeeReducer from './component/EmployeeReducer/Employee'
 
 const routes = [
     {
@@ -43,6 +44,11 @@ const routes = [
         path: '/QuanLyNV',
         exact: false,
         main : () => <QuanLyNV/>
+    },
+    {
+        path: '/Employee-Redux',
+        exact: false,
+        main : () => <EmployeeReducer/>
     },
     {
         path: '',
