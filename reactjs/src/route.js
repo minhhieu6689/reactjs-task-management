@@ -8,6 +8,7 @@ import APIWeather from './component/APIweather/Index'
 import Login from './component/Login';
 import QuanLy from './component/QuanLy';
 import NotFound from './component/NotFound';
+import EmployeeReducer from './component/EmployeeReducer/Employee'
 
 const routes = [
     {
@@ -50,6 +51,11 @@ const routes = [
     //     exact: false,
     //     main : ({history,match}) => <Login match={match} history={history}/>
     // },
+    {
+        path: '/Employee-Redux',
+        exact: false,
+        main : () => <EmployeeReducer/>
+    },
     {
         path: '/QuanLy',
         exact: false,
