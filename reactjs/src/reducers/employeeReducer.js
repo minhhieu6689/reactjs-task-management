@@ -12,15 +12,18 @@ const initState = {
 const EmployeeReducer = (state = initState, action) => {
     switch (action.type) {
         case GET_ALL_EMPLOYEES:
+            // console.log(state)
             return {
                 ...state,
                 employees: action.payload
             };
         case OPEN_ADD_EMPLOYEE_FORM:
+            console.log(state)
             return {
                 ...state,
                 isOpenEmployeeForm: action.payload,
-                typeFormEmployee: 'ADD'
+                typeFormEmployee: 'ADD',
+                employee: {id: parseInt(Math.random()*1000),name:'', phone: '',email: ''},
             };
         case OPEN_UPDATE_EMPLOYEE_FORM:
             let employeesFindUpdate = state.employees.slice();

@@ -41,12 +41,14 @@ export const deleteEmployee = (id) => dispatch => {
 
 
 export const openAddEmployeeForm = (data) => dispatch => {
+    
     dispatch({
         type: OPEN_ADD_EMPLOYEE_FORM,
         payload: data
     });
 }
 export const openUpdateEmployeeForm = (data) => dispatch => {
+    console.log(data)
     dispatch({
         type: OPEN_UPDATE_EMPLOYEE_FORM,
         payload: data

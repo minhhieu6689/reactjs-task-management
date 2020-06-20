@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { openAddEmployeeForm, addEmployee, updateEmployee } from '../../actions/employeeAction'
 class EmployeeForm extends Component {
     state = {
-        id: '',
+        id: Math.random()*1000,
         name: '',
         email: '',
         phone: '',
@@ -12,6 +12,7 @@ class EmployeeForm extends Component {
     componentDidMount(prevProps, prevState) {
         let entity = this.props.employee
         if (entity && this.props.typeForm === 'EDIT') {
+            
             this.setState({
                 id: entity.id,
                 name: entity.name,
@@ -19,11 +20,21 @@ class EmployeeForm extends Component {
                 phone: entity.phone,
             })
         }
+        else {
+           
+            this.setState({
+                id: parseInt(Math.random()*1000),
+                name: '',
+                email: '',
+                phone: '',
+            })
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.employee !== prevProps.employee) {
             let entity = this.props.employee
+            
             this.setState({
                 id: entity.id,
                 name: entity.name,
@@ -88,7 +99,7 @@ class EmployeeForm extends Component {
                     <form >
                         <div className="form-group text-left">
                             <label>Mã NV: </label>
-                            <input type="text" value={this.state.id} className="form-control" name="id" readOnly={this.props.typeForm === 'EDIT'} onChange={this.handleChange} />
+                            <input type="number" value={this.state.id} className="form-control" name="" disable={true} readOnly={this.props.typeForm === 'EDIT'} onChange={this.handleChange} />
                         </div>
                         <div className="form-group text-left">
                             <label  >Tên: </label>

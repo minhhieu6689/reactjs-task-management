@@ -8,7 +8,10 @@ import EmployeeList from './EmployeeList';
 class Employee extends Component {
 
     openEmployeeForm = () => {
+        
         this.props.openAddEmployeeForm(true)
+        
+        console.log(this.props.openAddEmployeeForm)
     }
 
     render() {
@@ -32,7 +35,7 @@ class Employee extends Component {
                             <span className="fa fa-plus-square" aria-hidden="true"> Thêm nhân viên </span>
                         </button>&nbsp;
                             {/*Trong Control bao gồm: Search -sort */}
-                        <Control />
+                        {/* <Control /> */}
                         {/*List - Trong TaskList bao gồm: TaskItemt*/}
                         <EmployeeList />
                     </div>
@@ -45,7 +48,8 @@ class Employee extends Component {
 function mapStateToProps(state) {
     return {
         employees: state.employee.employees,
-        isOpenForm: state.employee.isOpenEmployeeForm
+        isOpenForm: state.employee.isOpenEmployeeForm,
+        employee: null
     };
 }
 
