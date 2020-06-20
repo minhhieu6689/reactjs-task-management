@@ -32,7 +32,7 @@ class Employee extends Component {
                             <span className="fa fa-plus-square" aria-hidden="true"> Thêm nhân viên </span>
                         </button>&nbsp;
                             {/*Trong Control bao gồm: Search -sort */}
-                        <Control />
+                  
                         {/*List - Trong TaskList bao gồm: TaskItemt*/}
                         <EmployeeList />
                     </div>

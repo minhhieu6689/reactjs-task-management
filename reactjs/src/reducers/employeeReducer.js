@@ -14,12 +14,14 @@ const EmployeeReducer = (state = initState, action) => {
         case GET_ALL_EMPLOYEES:
             return {
                 ...state,
-                employees: action.payload
+                employees: action.payload,
+                employee: null
             };
         case OPEN_ADD_EMPLOYEE_FORM:
             return {
                 ...state,
                 isOpenEmployeeForm: action.payload,
+                employee: {id:parseInt(Math.random()*1000),name: '',phone: '', email: ''},
                 typeFormEmployee: 'ADD'
             };
         case OPEN_UPDATE_EMPLOYEE_FORM:

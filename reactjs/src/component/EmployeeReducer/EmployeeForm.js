@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { openAddEmployeeForm, addEmployee, updateEmployee } from '../../actions/employeeAction'
 class EmployeeForm extends Component {
     state = {
-        id: '',
+        id: parseInt(Math.random()*1000),
         name: '',
         email: '',
         phone: '',
@@ -35,7 +35,7 @@ class EmployeeForm extends Component {
 
     handleSetStateEmpty = () => {
         this.setState({
-            id: '',
+            id: parseInt(Math.random()*1000),
             name: '',
             email: '',
             phone: '',
@@ -88,7 +88,7 @@ class EmployeeForm extends Component {
                     <form >
                         <div className="form-group text-left">
                             <label>Mã NV: </label>
-                            <input type="text" value={this.state.id} className="form-control" name="id" readOnly={this.props.typeForm === 'EDIT'} onChange={this.handleChange} />
+                            <input type="number" value={this.state.id} className="form-control" name="" readOnly={this.props.typeForm === 'EDIT'} onChange={this.handleChange} />
                         </div>
                         <div className="form-group text-left">
                             <label  >Tên: </label>
