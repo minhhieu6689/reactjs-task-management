@@ -20,6 +20,7 @@ const EmployeeReducer = (state = initState, action) => {
         case OPEN_ADD_EMPLOYEE_FORM:
             console.log(state)
             return {
+                
                 ...state,
                 isOpenEmployeeForm: action.payload,
                 typeFormEmployee: 'ADD',
