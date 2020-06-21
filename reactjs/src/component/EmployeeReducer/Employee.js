@@ -8,10 +8,7 @@ import EmployeeList from './EmployeeList';
 class Employee extends Component {
 
     openEmployeeForm = () => {
-        
-        this.props.openAddEmployeeForm(true)
-        
-        console.log(this.props.openAddEmployeeForm)
+        this.props.openAddEmployeeForm(true)        
     }
 
     render() {
