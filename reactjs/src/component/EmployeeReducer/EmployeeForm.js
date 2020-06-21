@@ -107,10 +107,10 @@ class EmployeeForm extends Component {
                             <input type="text" value={this.state.phone} className="form-control" name="phone" onChange={this.handleChange} />
                         </div>
                         <div className="text-center">
-                            <button type="submit" className="btn btn-success" onClick={this.onSubmit}>
+                            <button className="btn btn-success" onClick={this.onSubmit}>
                                 <span className="fa fa-arrow-circle-down" aria-hidden="true"> Lưu lại </span>
                             </button>&nbsp;
-                                    <button type="submit" className="btn btn-danger">
+                                    <button className="btn btn-danger">
                                 <span className="fa fa-times" aria-hidden="true" onClick={this.closeEmployeeForm}> Hủy bỏ </span>
                             </button>&nbsp;
                                 </div>
