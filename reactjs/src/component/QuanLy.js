@@ -29,9 +29,21 @@ class QuanLy extends Component {
     }
 
     onToggleForm = () => {
-        this.setState({
-            isDisplayForm: !this.state.isDisplayForm
-        });
+        // this.setState({
+        //     isDisplayForm: !this.state.isDisplayForm, 
+        //     taskEditing: null
+        // });
+        if(this.state.isDisplayForm && this.state.taskEditing !== null){
+            this.setState({
+                isDisplayForm: true, 
+                taskEditing: null
+            });
+        }else {
+            this.setState({
+                isDisplayForm: !this.state.isDisplayForm,
+                taskEditing: null
+            })
+        }
     }
 
     onCloseForm = () => {
@@ -139,7 +151,7 @@ class QuanLy extends Component {
                              Generate Data 
                         </button> */}
                         {/*Trong Control bao gồm: Search -sort */}
-                        <Control />
+                       
                         {/*List - Trong TaskList bao gồm: TaskItemt*/}
                         <TaskList 
                             tasks={tasks} 
@@ -155,7 +167,6 @@ class QuanLy extends Component {
 }
 
 export default QuanLy;
-
 
 
 

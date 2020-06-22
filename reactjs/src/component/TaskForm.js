@@ -21,6 +21,22 @@ class TaskForm extends Component {
             
         }
     }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps && nextProps.task){
+            this.setState({
+                id: nextProps.task.id,
+                name: nextProps.task.name,
+                status: nextProps.task.status,
+            });
+        }else if(!nextProps.task){
+            this.setState({
+                id: '',
+            name : '',
+            status: false
+            });
+        }
+    }
     
     onCloseForm = () => {
         this.props.onCloseForm();
@@ -61,7 +77,7 @@ class TaskForm extends Component {
                 <div className="panel panel-warning">
                     <div className="panel-heading">
                         <h3 className="panel-title mr-5">
-                            { id !== '' ? 'Cập nhật công việc' : 'Thêm công việc' } 
+                        { id !== '' ? 'Cập nhật công việc' : 'Thêm công việc' }
                                 <span
                                 className="fa fa-times-circle "
                                 onClick={this.onCloseForm}>  </span>
