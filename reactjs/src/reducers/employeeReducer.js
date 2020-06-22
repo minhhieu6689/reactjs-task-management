@@ -20,7 +20,7 @@ const EmployeeReducer = (state = initState, action) => {
             return {
                 ...state,
                 isOpenEmployeeForm: action.payload,
-                typeFormEmployee: 'ADD'
+                typeFormEmployee: 'ADD',
             };
         case OPEN_UPDATE_EMPLOYEE_FORM:
             let employeesFindUpdate = state.employees.slice();
@@ -56,7 +56,8 @@ const EmployeeReducer = (state = initState, action) => {
             itemsDelete = itemsDelete.filter(item => item.id !== action.payload);
             return {
                 ...state,
-                employees: itemsDelete
+                employees: itemsDelete,
+                isOpenEmployeeForm: false
             }
         default:
             return state;

@@ -18,23 +18,25 @@ const menus = [
         exact: false,
     },
     {
-        name: 'Sản phẩm',
-        to: '/Products',
+        name: 'Người dùng',
+        to: '/Userspage',
         exact: false,
     },
-    {
-        name: 'Đăng Nhâp',
-        to: '/Login',
-        exact: false,
-    },
+    
     {
         name: 'Quản lý CV',
         to: '/QuanLy',
         exact: false,
     },
+    
     {
-        name: '',
-        to: '/NotFound',
+        name: 'Thời tiết',
+        to: '/Apiweather',
+        exact: false,
+    },
+    {
+        name: 'Đăng Nhâp',
+        to: '/Login',
         exact: false,
     },
     {

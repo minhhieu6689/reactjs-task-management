@@ -19,11 +19,15 @@ class EmployeeForm extends Component {
                 phone: entity.phone,
             })
         }
+        else {
+            this.handleSetStateEmpty()
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.employee !== prevProps.employee) {
             let entity = this.props.employee
+            
             this.setState({
                 id: entity.id,
                 name: entity.name,
@@ -35,7 +39,7 @@ class EmployeeForm extends Component {
 
     handleSetStateEmpty = () => {
         this.setState({
-            id: '',
+            id: parseInt(Math.random()*1000),
             name: '',
             email: '',
             phone: '',
@@ -88,7 +92,7 @@ class EmployeeForm extends Component {
                     <form >
                         <div className="form-group text-left">
                             <label>Mã NV: </label>
-                            <input type="text" value={this.state.id} className="form-control" name="id" readOnly={this.props.typeForm === 'EDIT'} onChange={this.handleChange} />
+                            <input type="number" value={this.state.id} className="form-control" name="" disable={true}/>
                         </div>
                         <div className="form-group text-left">
                             <label  >Tên: </label>
@@ -103,10 +107,10 @@ class EmployeeForm extends Component {
                             <input type="text" value={this.state.phone} className="form-control" name="phone" onChange={this.handleChange} />
                         </div>
                         <div className="text-center">
-                            <button type="submit" className="btn btn-success" onClick={this.onSubmit}>
+                            <button className="btn btn-success" onClick={this.onSubmit}>
                                 <span className="fa fa-arrow-circle-down" aria-hidden="true"> Lưu lại </span>
                             </button>&nbsp;
-                                    <button type="submit" className="btn btn-danger">
+                                    <button className="btn btn-danger">
                                 <span className="fa fa-times" aria-hidden="true" onClick={this.closeEmployeeForm}> Hủy bỏ </span>
                             </button>&nbsp;
                                 </div>
