@@ -17,18 +17,22 @@ const menus = [
         to: '/Contact',
         exact: false,
     },
-    {
-        name: 'Người dùng',
-        to: '/Userspage',
-        exact: false,
-    },
+    // {
+    //     name: 'Người dùng',
+    //     to: '/Userspage',
+    //     exact: false,
+    // },
     
     {
-        name: 'Quản lý CV',
+        name: 'Quản lý công việc',
         to: '/QuanLy',
         exact: false,
     },
-    
+    {
+        name: 'Quản lý nhân viên - redux',
+        to: '/Employee-Redux',
+        exact: false,
+    },
     {
         name: 'Thời tiết',
         to: '/Apiweather',
@@ -39,11 +43,6 @@ const menus = [
         to: '/Login',
         exact: false,
     },
-    {
-        name: 'Quản lý nhân viên - redux',
-        to: '/Employee-Redux',
-        exact: false,
-    }
 ]
 const MenuLink = ({
     label, // nội dung trong thẻ

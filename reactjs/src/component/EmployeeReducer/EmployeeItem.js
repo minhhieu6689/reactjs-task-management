@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { openUpdateEmployeeForm, deleteEmployee } from '../../actions/employeeAction'
 import { connect } from 'react-redux';
 class EmployeeItem extends Component {
-    updateEmployee = (id) =>{
+    updateEmployee = (id) => {
         this.props.openUpdateEmployeeForm(id)
     }
 
-    deleteEmployee = (id) =>{
-        this.props.deleteEmployee(id)
+    deleteEmployee = (id) => {
+        var r = window.confirm("Bạn có chắc chắn muốn xóa!");
+        if (r == true) {
+            this.props.deleteEmployee(id)
+        } 
     }
     render() {
         return (
@@ -17,7 +20,7 @@ class EmployeeItem extends Component {
                 <td className="text-center">{this.props.name}</td>
                 <td className="text-center">{this.props.email}</td>
                 <td className="text-center">{this.props.phone}</td>
-                <td className="text-center" index={this.props.index} style={{width:'200px'}}>
+                <td className="text-center" index={this.props.index} style={{ width: '200px' }}>
                     <button data-index={this.props.index} type="button" className="btn btn-warning" onClick={() => this.updateEmployee(this.props.id)}>
                         <span className="fa fa-pencil mr-5" aria-hidden="true"></span>
                             Sửa
@@ -39,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-    mapStateToProps, {openUpdateEmployeeForm, deleteEmployee }
+    mapStateToProps, { openUpdateEmployeeForm, deleteEmployee }
 )(EmployeeItem);
 
 

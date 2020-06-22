@@ -47,6 +47,7 @@ class EmployeeForm extends Component {
     }
 
     closeEmployeeForm = (e) => {
+        e.preventDefault();
         this.handleSetStateEmpty()
         this.props.openAddEmployeeForm(false)
     }
@@ -107,11 +108,11 @@ class EmployeeForm extends Component {
                             <input type="text" value={this.state.phone} className="form-control" name="phone" onChange={this.handleChange} />
                         </div>
                         <div className="text-center">
-                            <button className="btn btn-success" onClick={this.onSubmit}>
-                                <span className="fa fa-arrow-circle-down" aria-hidden="true"> Lưu lại </span>
+                            <button className="btn btn-success" type="button" onClick={this.onSubmit}>
+                                <span className="fa fa-arrow-circle-down" > Lưu lại </span>
                             </button>&nbsp;
-                                    <button className="btn btn-danger">
-                                <span className="fa fa-times" aria-hidden="true" onClick={this.closeEmployeeForm}> Hủy bỏ </span>
+                                    <button type="button" className="btn btn-danger" onClick={this.closeEmployeeForm}>
+                                <span className="fa fa-times" > Hủy bỏ </span>
                             </button>&nbsp;
                                 </div>
                     </form>

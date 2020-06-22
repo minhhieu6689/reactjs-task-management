@@ -10,7 +10,7 @@ class EmployeeList extends Component {
 
     render() {
         const employeeItem = this.props.employees.map( (item,index)=>{
-            return<EmployeeItem index={index} id={item.id} name={item.name} email={item.email} phone ={item.phone} />
+            return<EmployeeItem key={index} index={index} id={item.id} name={item.name} email={item.email} phone ={item.phone} />
         })
         return (
             <div className="row mt-15">
